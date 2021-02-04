@@ -1,34 +1,31 @@
-import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { createRoutingFactory, Spectator } from '@ngneat/spectator/jest';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-	beforeEach(async () => {
-		await TestBed.configureTestingModule({
-			imports: [RouterTestingModule],
-			declarations: [AppComponent],
-		}).compileComponents();
+	let spectator: Spectator<AppComponent>;
+	const createComponent = createRoutingFactory({
+		component: AppComponent,
+		imports: [RouterTestingModule],
+	});
+
+	beforeEach(() => {
+		spectator = createComponent();
 	});
 
 	it('should create the app', () => {
-		const fixture = TestBed.createComponent(AppComponent);
-		const app = fixture.componentInstance;
+		const app = spectator.component;
 		expect(app).toBeTruthy();
 	});
 
 	it(`should have as title 'tailwind-app'`, () => {
-		const fixture = TestBed.createComponent(AppComponent);
-		const app = fixture.componentInstance;
+		const app = spectator.component;
 		expect(app.title).toEqual('tailwind-app');
 	});
 
 	it('should render title', () => {
-		const fixture = TestBed.createComponent(AppComponent);
-		fixture.detectChanges();
-		const compiled = fixture.nativeElement as HTMLElement;
-		const titleSpan = compiled.querySelector(
-			'.content span'
-		) as HTMLSpanElement;
-		expect(titleSpan.textContent).toContain('tailwind-app app is running!');
+		expect(spectator.query('.content span')).toHaveText(
+			'tailwind-app app is running!'
+		);
 	});
 });
