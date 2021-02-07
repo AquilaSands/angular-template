@@ -1,4 +1,4 @@
 {
-  "js/ts.implicitProjectConfig.strictNullChecks": true,
-  "typescript.tsdk": "./node_modules/typescript/lib"
+	"js/ts.implicitProjectConfig.strictNullChecks": true,
+	"typescript.tsdk": "./node_modules/typescript/lib"
 }
