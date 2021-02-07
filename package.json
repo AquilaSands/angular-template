@@ -50,6 +50,7 @@
 		"eslint-plugin-prefer-arrow": "1.2.3",
 		"eslint-plugin-prettier": "^3.3.1",
 		"jest": "^26.6.3",
+		"jest-extended": "^0.11.5",
 		"jest-preset-angular": "^8.3.2",
 		"postcss": "^8.2.4",
 		"postcss-import": "^14.0.0",
@@ -91,7 +92,8 @@
 			}
 		},
 		"setupFilesAfterEnv": [
-			"<rootDir>/setup-jest.ts"
+      "<rootDir>/setup-jest.ts",
+      "jest-extended"
 		],
 		"testPathIgnorePatterns": [
 			"<rootDir>/node_modules/",
