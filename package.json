@@ -35,7 +35,6 @@
 		"@angular-eslint/template-parser": "1.1.0",
 		"@angular/cli": "~11.1.2",
 		"@angular/compiler-cli": "~11.1.1",
-		"@ngneat/spectator": "^7.0.0",
 		"@types/jest": "^26.0.20",
 		"@types/node": "^14.14.22",
 		"@typescript-eslint/eslint-plugin": "^4.14.2",
@@ -92,8 +91,8 @@
 			}
 		},
 		"setupFilesAfterEnv": [
-      "<rootDir>/setup-jest.ts",
-      "jest-extended"
+			"<rootDir>/setup-jest.ts",
+			"jest-extended"
 		],
 		"testPathIgnorePatterns": [
 			"<rootDir>/node_modules/",
