@@ -79,7 +79,8 @@
 			"polyfills.ts",
 			"public_api.ts",
 			".module.ts",
-			".interface.ts"
+			".interface.ts",
+      ".guard.ts"
 		],
 		"coverageThreshold": {
 			"global": {
