@@ -1,6 +1,6 @@
 {
 	"root": true,
-	"ignorePatterns": ["projects/**/*", "./setupJest.ts"],
+	"ignorePatterns": ["projects/**/*"],
 	"overrides": [
 		{
 			"files": ["*.ts"],
@@ -20,6 +20,35 @@
 			],
 			"rules": {
 				"import/prefer-default-export": "off",
+				"import/no-extraneous-dependencies": [
+					"error",
+					{
+						"devDependencies": [
+							"test/**", // tape, common npm pattern
+							"tests/**", // also common npm pattern
+							"spec/**", // mocha, rspec-like pattern
+							"**/__tests__/**", // jest pattern
+							"**/__mocks__/**", // jest pattern
+							"test.{js,jsx,ts}", // repos with a single test file
+							"test-*.{js,jsx,ts}", // repos with multiple top-level test files
+							"**/*{.,_}{test,spec,e2e-spec}.{js,jsx,ts}", // tests where the extension or filename suffix denotes that it is a test
+							"**/jest.config.{js,ts}", // jest config
+							"**/jest.setup.{js,ts}", // jest setup
+							"**/webpack.config.{js,ts}", // webpack config
+							"**/webpack.config.*.{js,ts}", // webpack config
+							"**/.eslintrc.{js,ts}", // eslint config
+							"**/global.d.ts"
+						],
+						"optionalDependencies": false
+					}
+				],
+				"@typescript-eslint/no-floating-promises": [
+					"error",
+					{
+						"ignoreVoid": true,
+						"ignoreIIFE": true
+					}
+				],
 				"@angular-eslint/component-selector": [
 					"error",
 					{

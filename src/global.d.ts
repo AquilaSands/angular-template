@@ -1,1 +1,1 @@
-import 'jest-extended'; //eslint-disable-line
+import 'jest-extended';

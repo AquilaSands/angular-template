@@ -1,10 +1,10 @@
 module.exports = {
-	preset: 'jest-preset-angular',
+	preset: 'jest-playwright-preset',
 	verbose: true,
-	testURL: 'http://localhost/',
-	collectCoverage: true,
-	coverageDirectory: 'dist/test-coverage',
-	collectCoverageFrom: ['src/app/**/*.ts'],
+	// testURL: 'http://localhost/',
+	collectCoverage: false,
+	coverageDirectory: '<rootDir>/test-coverage',
+	collectCoverageFrom: ['../src/app/**', '!../src/app/**/*.spec.ts'],
 	coveragePathIgnorePatterns: [
 		'main.ts',
 		'polyfills.ts',
@@ -27,12 +27,12 @@ module.exports = {
 			lines: 95,
 		},
 	},
-	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts', 'jest-extended'],
-	testMatch: ['<rootDir>/src/app/**/*.spec.ts'],
-	testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/', '<rootDir>/e2e/'],
+	setupFilesAfterEnv: [/*'<rootDir>/jest.setup.ts',*/ 'jest-extended'],
+	testMatch: ['<rootDir>/src/**/*.e2e-spec.ts'],
+	// testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/', '<rootDir>/src/'],
 	globals: {
 		'ts-jest': {
-			tsconfig: '<rootDir>/tsconfig.spec.json',
+			tsconfig: '<rootDir>/tsconfig.json',
 			stringifyContentPathRegex: '\\.html$',
 			diagnostics: {
 				ignoreCodes: [151001],
