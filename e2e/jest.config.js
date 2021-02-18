@@ -1,7 +1,6 @@
 module.exports = {
 	preset: 'jest-playwright-preset',
 	verbose: true,
-	// testURL: 'http://localhost/',
 	collectCoverage: false,
 	coverageDirectory: '<rootDir>/test-coverage',
 	collectCoverageFrom: ['../src/app/**', '!../src/app/**/*.spec.ts'],
@@ -27,9 +26,8 @@ module.exports = {
 			lines: 95,
 		},
 	},
-	setupFilesAfterEnv: [/*'<rootDir>/jest.setup.ts',*/ 'jest-extended'],
+	setupFilesAfterEnv: ['jest-extended'],
 	testMatch: ['<rootDir>/src/**/*.e2e-spec.ts'],
-	// testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/', '<rootDir>/src/'],
 	globals: {
 		'ts-jest': {
 			tsconfig: '<rootDir>/tsconfig.json',
