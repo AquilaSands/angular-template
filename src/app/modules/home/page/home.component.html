@@ -1,0 +1,41 @@
+<div>
+	<app-media-object mediaVerticalAlignment="center">
+		<h3>Media Object Title</h3>
+		<img media src="https://placekitten.com/75/75" alt="Kitteh" />
+		<app-media-object mediaVerticalAlignment="bottom">
+			<h3>Media Object Title</h3>
+			<img media src="https://placekitten.com/90/90" alt="Kitteh" />
+			<app-media-object>
+				<img media src="https://placekitten.com/110/110" alt="Kitteh" />
+				<p>
+					This is the media object content it can be anything including another
+					media object.
+				</p>
+			</app-media-object>
+			<app-media-object [reverse]="true">
+				<fa-icon [icon]="faCoffee" media></fa-icon>
+				<p>
+					This is the media object content it can be anything including another
+					media object.
+				</p>
+			</app-media-object>
+		</app-media-object>
+	</app-media-object>
+	<app-media-object [reverse]="true" mediaVerticalAlignment="center">
+		<h3>Cute Kitten</h3>
+		<img media src="https://placekitten.com/80/80" alt="Kitteh" />
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus
+			est
+			non ipsum pellentesque, vel aliquet metus fringilla. Duis facilisis a eros
+			vitae
+			viverra. Orci varius natoque penatibus et magnis dis parturient montes,
+			nascetur
+			ridiculus mus. Quisque sed luctus justo. Suspendisse potenti.
+		</p>
+	</app-media-object>
+	<app-media-object mediaVerticalAlignment="center">
+		<h3>Cute Kitten</h3>
+		<img media src="https://placekitten.com/80/80" alt="Kitteh" />
+	</app-media-object>
+</div>

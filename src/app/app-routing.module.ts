@@ -1,7 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContentLayoutComponent } from '@layout/content-layout/content-layout.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+	{
+		path: '',
+		component: ContentLayoutComponent,
+		children: [
+			{
+				path: '',
+				loadChildren: () =>
+					import('@modules/home/home.module').then((m) => m.HomeModule),
+			},
+			{
+				path: 'about',
+				loadChildren: () =>
+					import('@modules/about/about.module').then((m) => m.AboutModule),
+			},
+		],
+	},
+	{
+		path: '**',
+		redirectTo: '',
+		pathMatch: 'full',
+	},
+];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
