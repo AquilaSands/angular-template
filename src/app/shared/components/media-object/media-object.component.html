@@ -1,11 +1,15 @@
-<div class="bg-white border rounded-sm border-gray-700
-		p-3 flex flex-col sm:flex-row min-w-min">
-	<div [ngClass]="{
+<div
+	class="bg-white border rounded-sm border-gray-700 p-3 flex flex-col sm:flex-row min-w-min"
+>
+	<div
+		[ngClass]="{
 			'sm:self-center': mediaVerticalAlignment === 'center',
 			'sm:self-end': mediaVerticalAlignment === 'bottom',
 			'sm:mr-4': !reverse,
 			'sm:ml-4 order-1': reverse
-		}" class="min-w-max">
+		}"
+		class="min-w-max"
+	>
 		<ng-content select="[media]"></ng-content>
 	</div>
 	<div class="flex-1">
