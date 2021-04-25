@@ -1,7 +1,8 @@
 module.exports = {
 	preset: 'jest-playwright-preset',
-	runner: "./playwright-runner.js",
-	testTimeout: 40*1000, // 40 secs
+	runner: './playwright-runner.js',
+	testEnvironment: './playwright-env.js',
+	testTimeout: 40 * 1000, // 40 secs
 	verbose: true,
 	collectCoverage: false,
 	coverageDirectory: '<rootDir>/test-coverage',
