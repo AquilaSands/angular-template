@@ -57,7 +57,7 @@
     "jest-extended": "^0.11.5",
     "jest-playwright-preset": "^1.5.2",
     "jest-preset-angular": "^8.4.0",
-    "playwright": "^1.10.0",
+    "playwright": "^1.55.1",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.1.2",
     "ts-node": "~9.1.1",
